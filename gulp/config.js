@@ -5,32 +5,34 @@ module.exports = {
   'serverport': 3000,
 
   'styles': {
-    'src' : 'app/styles/**/*.scss',
-    'dest': 'build/css'
+    'src' : 'src/app/main.less',
+    'dest': 'build/css/'
   },
 
   'scripts': {
-    'src' : 'app/js/**/*.js',
+    'src' : 'src/app/**/*.js',
     'dest': 'build/js'
   },
 
   'images': {
-    'src' : 'app/images/**/*',
+    'src' : 'src/images/**/*',
     'dest': 'build/images'
   },
 
   'fonts': {
-    'src' : ['app/fonts/**/*'],
+    'src' : [
+      'bower_components/semantic-ui/**/**/*.eot',
+      'bower_components/semantic-ui/**/**/*.ttf',
+      'bower_components/semantic-ui/**/**/*.woff'
+    ],
     'dest': 'build/fonts'
   },
 
   'views': {
     'watch': [
-      'app/index.html',
-      'app/views/**/*.html'
-    ],
-    'src': 'app/views/**/*.html',
-    'dest': 'app/js'
+      'src/index.html',
+      'src/**/*.less'
+    ]
   },
 
   'gzip': {
@@ -44,7 +46,7 @@ module.exports = {
   },
 
   'browserify': {
-    'entries'   : ['./app/js/main.js'],
+    'entries'   : ['./src/app/main.js'],
     'bundleName': 'main.js',
     'sourcemap' : true
   },

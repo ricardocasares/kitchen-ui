@@ -1,0 +1,13 @@
+.row.list
+	.col-lg-12
+		input.form-control(type='text', ng-model="search", placeholder='Search')
+.row
+	.col-xs-8(ng-repeat="(key, projects) in vm.projects | filter: search | groupBy: 'date'")
+		h6.index {{::key}}
+		hr
+		div(ng-repeat="project in projects")
+			h5
+				a(ui-sref="app.project({ id: project.id })") {{::project.name}}
+			hr
+	.col-lg-4
+		a(href="#") Algo

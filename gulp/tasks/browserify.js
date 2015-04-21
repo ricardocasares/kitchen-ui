@@ -16,6 +16,7 @@ var handleErrors = require('../util/handleErrors');
 var browserSync  = require('browser-sync');
 var debowerify   = require('debowerify');
 var ngAnnotate   = require('browserify-ngannotate');
+var jade         = require('browserify-plain-jade');
 
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
 function buildScript(file) {
@@ -36,7 +37,8 @@ function buildScript(file) {
   }
 
   var transforms = [
-    babelify,
+    jade,
+    // babelify,
     debowerify,
     ngAnnotate,
     'brfs',

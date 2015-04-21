@@ -1,0 +1,13 @@
+.container.projects
+	.row
+		.col-lg-12
+			tabset.tabs
+				tab(select="vm.go('app.project')")
+					tab-heading Project
+					span.label.label-success {{vm.project.tag}}
+					h4 {{vm.project.name}}
+					p {{vm.project.description}}
+				tab(select="vm.go('app.project.discussions')")
+					tab-heading Discussions
+					ui-view
+
