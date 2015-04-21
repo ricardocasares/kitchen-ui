@@ -23,7 +23,7 @@
 						img.img-responsive(src="http://www.igniteui.com/help/images/igsparkline_overview_11.png")
 	.row
 		.col-lg-3.col-lg-push-9
-			h6 Filter projects
+			h5 Filter projects
 			ul.nav.nav-pills.nav-stacked
 				li
 					a(href="#") Favorites
@@ -37,7 +37,7 @@
 		.col-lg-9.col-lg-pull-3
 			.row.agenda
 				.col-xs-12(ng-repeat="(key, projects) in vm.projects | filter: search | groupBy: 'key'")
-					h6.page-header {{::key}}
+					h5.page-header {{::key}}
 					.row(ng-repeat="project in projects")
 						.col-xs-9 
 							p
