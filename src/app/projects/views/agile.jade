@@ -41,10 +41,10 @@
 				small.text-muted  20/10/2015 to 7/11/2015
 				img(src="http://www.igniteui.com/help/images/igsparkline_overview_11.png").img-responsive
 				.sprint-meta
-					span.label.label-default 25 pts
 					span.label.label-primary 10 stories
-					span.label.label-success 5 closed
-					span.label.label-danger 5 open
+					span.label.label-default 25 pts
+					span.label.label-success + 5
+					span.label.label-danger - 5
 					span.label.label-warning 7 days left
 		.row
 			.col-xs-12(ng-repeat="story in vm.stories | filter: search")
