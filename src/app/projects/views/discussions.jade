@@ -11,13 +11,14 @@
 		hr
 	.col-lg-9.col-lg-pull-3
 		.row
-			.col-xs-12(ng-repeat="discussion in vm.discussions | filter: search")
+			.col-xs-12(ng-repeat="discussion in vm.discussions")
 				.panel.panel-default
 					.panel-body
 						.row
 							.col-xs-6
 								a(href="#") {{::discussion.name}}
 							.col-xs-6.text-right
-								span.label.label-default 5
+								span.label.label-success {{::discussion.status}}
+								span.label.label-default {{::discussion.comments}}
 			.col-xs-12.text-center
 				button.btn.btn-default Load more

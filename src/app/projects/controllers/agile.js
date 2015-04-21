@@ -1,7 +1,7 @@
 'use strict';
 module.exports = AgileCtrl;
 // @ngInject
-function AgileCtrl($stateParams) {
+function AgileCtrl($stateParams, $http) {
 
   var vm = this;
 

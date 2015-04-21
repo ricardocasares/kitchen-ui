@@ -6,9 +6,11 @@ require('angular');
 require('angular-ui-router');
 require('angular-bootstrap');
 require('angular-loading-bar');
+require('angular-mocks');
 require('./home');
 require('./people');
 require('./projects');
+require('./everything');
 
 // create and bootstrap application
 angular.element(document).ready(function() {
@@ -19,7 +21,9 @@ angular.element(document).ready(function() {
     'angular-loading-bar',
     'app.home',
     'app.people',
-    'app.projects'
+    'app.projects',
+    'app.everything',
+    'ngMockE2E'
   ];
 
   // mount on window for testing
