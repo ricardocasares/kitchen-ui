@@ -1,15 +1,17 @@
 .row
 	.col-lg-3.col-lg-push-9
-		h6 Filter people
+		h6 Filter by team
 		ul.nav.nav-pills.nav-stacked
 			li.active
 				a(href="#") Our team
 			li
-				a(href="#") Client
+				a(href="#") Client team
+		hr
+		button.btn.btn-default.btn-block Add new people to this team
 		hr
 	.col-lg-9.col-lg-pull-3
 		.row
-			.col-xs-6.col-lg-4(ng-repeat="person in vm.people | filter: search")
+			.col-xs-12.col-lg-4(ng-repeat="person in vm.people | filter: search")
 				.thumbnail.text-center
 					img.img-circle(src="https://design.atlassian.com/1.1/images/avatars/default-user/96/user-avatar-blue-48@2x.png")
 					.caption.text-center

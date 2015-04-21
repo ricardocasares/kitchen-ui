@@ -1,6 +1,6 @@
 .row
 	.col-lg-3.col-lg-push-9
-		h6 Filter stories
+		h6 Filter by sprint
 		ul.nav.nav-pills.nav-stacked
 			li.active
 				a(href="#") Sprint 2
@@ -9,8 +9,27 @@
 			li
 				a(href="#") Backlog
 		hr
+		h6 Filter stories by status
+		ul.nav.nav-pills.nav-stacked
+			li
+				a(href="#") All
+			li.active
+				a(href="#") Open
+			li
+				a(href="#") In progress
+			li
+				a(href="#") Closed
+		hr
 	.col-lg-9.col-lg-pull-3
-		h4.page-header Sprint 2
+		.panel.panel-default
+			.panel-body
+				h4.page-header Sprint 2
+				img(src="http://www.igniteui.com/help/images/igsparkline_overview_11.png").img-responsive
+				.sprint-meta
+					span.label.label-default 25 points
+					span.label.label-primary 10 stories
+					span.label.label-success 5 closed
+					span.label.label-danger 5 open
 		.row
 			.col-xs-12(ng-repeat="story in vm.stories | filter: search")
 				.panel.panel-default
