@@ -1,23 +1,25 @@
 .row
 	.col-lg-3.col-lg-push-9
-		h6 Filter discussions
+		h6 Filter stories
 		ul.nav.nav-pills.nav-stacked
 			li.active
-				a(href="#") Recent
+				a(href="#") Sprint 2
 			li
-				a(href="#") Open
+				a(href="#") Sprint 1
 			li
-				a(href="#") Closed
+				a(href="#") Backlog
 		hr
 	.col-lg-9.col-lg-pull-3
+		h4.page-header Sprint 2
 		.row
-			.col-xs-12(ng-repeat="discussion in vm.discussions | filter: search")
+			.col-xs-12(ng-repeat="story in vm.stories | filter: search")
 				.panel.panel-default
 					.panel-body
 						.row
 							.col-xs-6
-								a(href="#") {{::discussion.name}}
+								a(href="#") {{::story.name}}
 							.col-xs-6.text-right
 								span.label.label-default 5
 			.col-xs-12.text-center
 				button.btn.btn-default Load more
+

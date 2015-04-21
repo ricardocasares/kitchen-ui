@@ -1,13 +1,19 @@
-.container.projects
+.container.project
 	.row
 		.col-lg-12
-			tabset.tabs
-				tab(select="vm.go('app.project')")
-					tab-heading Project
-					span.label.label-success {{vm.project.tag}}
-					h4 {{vm.project.name}}
-					p {{vm.project.description}}
-				tab(select="vm.go('app.project.discussions')")
-					tab-heading Discussions
-					ui-view
+			span.label.label-success {{vm.project.tag}}
+			h4.page-header {{vm.project.name}}
 
+			p {{vm.project.description}}
+			hr
+		.col-lg-12
+			ul.nav.nav-pills
+				li(ui-sref-active="active")
+					a(ui-sref="app.project.discussions") Discussions
+				li(ui-sref-active="active")
+					a(ui-sref="app.project.agile") Agile
+				li(ui-sref-active="active")
+					a(ui-sref="app.project.people") People
+		.col-lg-12
+			hr
+			ui-view

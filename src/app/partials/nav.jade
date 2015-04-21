@@ -9,12 +9,12 @@ nav.navbar.navbar-default
       a.navbar-brand(ui-sref="app.home") kitchen
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li
+        li(ui-sref-active="active")
           a(ui-sref="app.projects") Projects
-        li
+        li(ui-sref-active="active")
           a(ui-sref="app.people") People
-        li
-          a(ui-sref="app.people") Everything
+        li(ui-sref-active="active")
+          a(ui-sref="app.everything") Everything
         li(dropdown).dropdown
           a.dropdown-toggle(href='#', dropdown-toggle, role='button', aria-expanded='false')
             | Dropdown 

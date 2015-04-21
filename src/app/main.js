@@ -6,7 +6,6 @@ require('angular');
 require('angular-ui-router');
 require('angular-bootstrap');
 require('angular-loading-bar');
-require('./config/templates');
 require('./home');
 require('./people');
 require('./projects');

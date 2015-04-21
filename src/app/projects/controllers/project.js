@@ -4,9 +4,8 @@ module.exports = ProjectCtrl;
 function ProjectCtrl($stateParams, $state) {
 
   var vm = this;
-  vm.go = function(state) {
-    $state.go(state);
-  };
+
+  console.log($stateParams);
 
   vm.projects = [
     { date: 'ahora', id: 1, key: 'H', name: 'Hewlett-Packard', tag: 'New', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos et quo at. Ipsum quaerat odit labore, debitis facere recusandae nesciunt quisquam'},
@@ -20,6 +19,6 @@ function ProjectCtrl($stateParams, $state) {
     { date: 'friday', id: 9, key: 'M', name: 'McDonald\'s', tag: 'New', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos et quo at. Ipsum quaerat odit labore, debitis facere recusandae nesciunt quisquam'}
   ];
 
-  vm.project = vm.projects[$stateParams.id -1];
+  vm.project = vm.projects[$stateParams.id];
 
 }

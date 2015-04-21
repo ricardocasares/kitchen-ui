@@ -12,6 +12,7 @@ function Routes($stateProvider) {
   })
   .state('app.project', {
     url: '/projects/:id',
+    abstract: true,
     controller: require('./controllers/project'),
     controllerAs: 'vm',
     template: require('./views/project.jade')
@@ -21,6 +22,18 @@ function Routes($stateProvider) {
     controller: require('./controllers/discussions'),
     controllerAs: 'vm',
     template: require('./views/discussions.jade')
+  })
+  .state('app.project.agile', {
+    url: '/agile',
+    controller: require('./controllers/agile'),
+    controllerAs: 'vm',
+    template: require('./views/agile.jade')
+  })
+  .state('app.project.people', {
+    url: '/people',
+    controller: require('./controllers/people'),
+    controllerAs: 'vm',
+    template: require('./views/people.jade')
   });
 }
 mod.config(Routes);

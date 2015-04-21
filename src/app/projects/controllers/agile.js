@@ -1,11 +1,11 @@
 'use strict';
-module.exports = DiscussionsCtrl;
+module.exports = AgileCtrl;
 // @ngInject
-function DiscussionsCtrl($stateParams) {
+function AgileCtrl($stateParams) {
 
   var vm = this;
 
-  vm.discussions = [
+  vm.stories = [
     { date: 'ahora', id: 1, key: 'H', name: 'Hewlett-Packard', tag: 'New', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos et quo at. Ipsum quaerat odit labore, debitis facere recusandae nesciunt quisquam'},
     { date: 'ahora', id: 2, key: 'M', name: 'Mercado Libre', tag: 'New', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos et quo at. Ipsum quaerat odit labore, debitis facere recusandae nesciunt quisquam'},
     { date: 'ahora', id: 3, key: 'A', name: 'American Express', tag: 'New', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos et quo at. Ipsum quaerat odit labore, debitis facere recusandae nesciunt quisquam error'},
@@ -16,6 +16,4 @@ function DiscussionsCtrl($stateParams) {
     { date: 'friday', id: 8, key: 'S', name: 'Santex', tag: 'New', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos et quo at. Ipsum quaerat odit labore, debitis facere recusandae nesciunt quisquam error'},
     { date: 'friday', id: 9, key: 'M', name: 'McDonald\'s', tag: 'New', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos et quo at. Ipsum quaerat odit labore, debitis facere recusandae nesciunt quisquam'}
   ];
-
-
 }

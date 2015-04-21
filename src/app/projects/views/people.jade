@@ -1,0 +1,16 @@
+.row
+	.col-lg-3.col-lg-push-9
+		h6 Filter people
+		ul.nav.nav-pills.nav-stacked
+			li.active
+				a(href="#") Our team
+			li
+				a(href="#") Client
+		hr
+	.col-lg-9.col-lg-pull-3
+		.row
+			.col-xs-6.col-lg-4(ng-repeat="person in vm.people | filter: search")
+				.thumbnail.text-center
+					img.img-circle(src="https://design.atlassian.com/1.1/images/avatars/default-user/96/user-avatar-blue-48@2x.png")
+					.caption.text-center
+						a(href="#") {{::person.name}}

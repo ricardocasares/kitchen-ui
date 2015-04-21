@@ -7,6 +7,7 @@ var gulp        = require('gulp');
 gulp.task('browserSync', function() {
 
   browserSync({
+    ui: 3001,
     proxy: 'localhost:' + config.serverport
   });
 
