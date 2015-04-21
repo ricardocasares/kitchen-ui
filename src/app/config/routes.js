@@ -11,5 +11,4 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
 }
-
 module.exports = Routes;

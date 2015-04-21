@@ -1,8 +1,6 @@
 'use strict';
 var mod = require('./index');
-/**
- * @ngInject
- */
+// @ngInject
 function Routes($stateProvider) {
   $stateProvider
   .state('app.people', {

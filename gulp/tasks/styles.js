@@ -12,6 +12,7 @@ gulp.task('styles', function () {
 
   return gulp.src(config.styles.src)
     .pipe(less())
+    .on('error', handleErrors)
     .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 8'))
     .on('error', handleErrors)
     .pipe(gulp.dest(config.styles.dest))

@@ -1,15 +1,34 @@
 .home {
 	.jumbotron {
 		text-align: center;
-		h1 {
+	  position: relative;
+	  z-index: 1;
+	  border: 1px solid #DDD;
+	  background: @white;
+	  h1 {
 			color: @main;
 			font-weight: 700;
 			letter-spacing: -4px;
+			line-height: 30px;
 		}
-		background: @white;
-		border: 1px solid #DDD;
+		h2 {
+			color: #333;
+		}
+		h3 {
+			color: #555;
+			margin-top: 5px;
+		}
 	}
-	h4 {
-		color: @main;
+
+	.jumbotron:before {
+	  content: "";
+	  position: absolute;
+	  z-index: -1;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  background: url('http://cdn2.hubspot.net/hub/91363/file-507396715-png/images/illustration-people-map.png?t=1396625656000') @white;
+	  opacity: 0.3;
 	}
 }

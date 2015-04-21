@@ -19,30 +19,29 @@ function OnRun($rootScope, AppSettings, $httpBackend) {
   var agile = require('../../../test/fixtures/agile.json');
   var people = require('../../../test/fixtures/people.json');
   
-  $httpBackend.whenGET('/api/projects').respond(function(method, url, data, headers) {
+  $httpBackend.whenGET('/api/projects').respond(function(method, url, data) {
     console.log(method, url, data);
     return [200, projects, {}];
   });
 
-  $httpBackend.whenGET(/api\/projects\/(\d)\/(agile)/).respond(function(method, url, data, headers){
+  $httpBackend.whenGET(/api\/projects\/(\d)\/(agile)/).respond(function(method, url, data){
     console.log(method, url, data);
     return [200, agile, {}];
   });
 
-  $httpBackend.whenGET(/api\/projects\/(\d)\/(discussions)/).respond(function(method, url, data, headers){
+  $httpBackend.whenGET(/api\/projects\/(\d)\/(discussions)/).respond(function(method, url, data){
     console.log(method, url, data);
     return [200, discussions, {}];
   });
 
-  $httpBackend.whenGET(/api\/projects\/(\d)\/(people)/).respond(function(method, url, data, headers){
+  $httpBackend.whenGET(/api\/projects\/(\d)\/(people)/).respond(function(method, url, data){
     console.log(method, url, data);
     return [200, people, {}];
   });
 
-  $httpBackend.whenGET(/api\/projects\/([0-9])/).respond(function(method, url, data, headers){
+  $httpBackend.whenGET(/api\/projects\/([0-9])/).respond(function(method, url, data){
     console.log(method, url, data);
     return [200, projects[url.split('/')[3]-1], {}];
   });
 }
-
 module.exports = OnRun;

@@ -9,17 +9,18 @@
 @import (inline) "../../bower_components/angular-loading-bar/build/loading-bar.css";
 @import url("//fonts.googleapis.com/css?family=Roboto:300,400,500");
 @import url("//fonts.googleapis.com/css?family=Montserrat:400,700");
+@import './partials/nav';
 @import './home/home';
 @import './projects/projects';
 @import './everything/everything';
 
 h1, h2, h3, h4, h5, h6 {
-	color: #666;
-	font-family: 'Montserrat', sans-serif;
+	color: #333;
+	font-family: 'Roboto', sans-serif;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: normal;
   background-color: #F9F9F9;
 }
@@ -29,6 +30,7 @@ p {
 .kitchen {
 	letter-spacing: -1px;
 	font-weight: 700;
+	font-family: 'Montserrat';
 }
 .navbar-default {
 	background: @white;
@@ -36,21 +38,11 @@ p {
 	border-left: 0;
 	border-right: 0;
 }
-.navbar-default .navbar-brand {
-	font-family: 'Montserrat';
-	letter-spacing: -1px;
-	font-weight: 700;
-	color: @main;
-}
-.navbar-default .navbar-brand:hover {
-	color: @accent;
-}
 
 .footer {
   width: 100%;
   text-align: center;
   margin-top: 50px;
-  font-family: 'Montserrat', sans-serif;
 }
 
 #loading-bar .bar {
@@ -61,4 +53,11 @@ p {
   -ms-box-shadow: @main 1px 0 6px 1px;
   -webkit-box-shadow: @main 1px 0 6px 1px;
   box-shadow: @main 1px 0 6px 1px;
+}
+
+.person {
+  .caption {
+    margin-top: 10px;
+  }
+  margin-bottom: 20px;
 }

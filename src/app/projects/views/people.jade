@@ -1,19 +1,20 @@
 .row
 	.col-lg-3.col-lg-push-9
-		h6 Filter by team
+		h5 Filter by team
 		ul.nav.nav-pills.nav-stacked
 			li.active
 				a(href="#") Client team
 			li
 				a(href="#") Our team
 		hr
-		h6 Invite someone to this team
+		h5 Invite someone to this team
 		input(placeholder="Email address", type="email").form-control
 		hr
 	.col-lg-9.col-lg-pull-3
 		.row
-			.col-xs-12.col-lg-4(ng-repeat="person in vm.people | filter: search")
-				.thumbnail.text-center
-					img.img-circle(src="https://design.atlassian.com/1.1/images/avatars/default-user/96/user-avatar-blue-48@2x.png")
+			.col-xs-6.col-lg-3(ng-repeat="person in vm.people | filter: search")
+				.person.text-center.thumbnail
+					img.img-rounded(width="100%", src="http://i.picresize.com/images/2015/04/21/i2JHa.png")
 					.caption.text-center
-						a(href="#") {{::person.name}}
+						p
+							a(href="#") {{::person.name}}

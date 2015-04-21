@@ -32,6 +32,7 @@ function Routes($stateProvider) {
     controller: require('./controllers/discussions'),
     controllerAs: 'vm',
     template: require('./views/discussions.jade'),
+    title: 'Project discussions',
     resolve: {
       discussions: function ($http, project, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.id + '/discussions');
@@ -43,6 +44,7 @@ function Routes($stateProvider) {
     controller: require('./controllers/agile'),
     controllerAs: 'vm',
     template: require('./views/agile.jade'),
+    title: 'Agile management',
     resolve: {
       sprints: function ($http, project, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.id + '/agile');
@@ -54,6 +56,7 @@ function Routes($stateProvider) {
     controller: require('./controllers/people'),
     controllerAs: 'vm',
     template: require('./views/people.jade'),
+    title: 'People on this project',
     resolve: {
       people: function ($http, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.id + '/people');
@@ -61,5 +64,6 @@ function Routes($stateProvider) {
     }
   });
 }
+Routes.$inject = ['$stateProvider'];
 mod.config(Routes);
 module.exports = Routes;
