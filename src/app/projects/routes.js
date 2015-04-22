@@ -68,27 +68,36 @@ function Routes($stateProvider) {
       }
     }
   })
-  .state('app.project.backlog', {
-    url: '/backlog',
-    controller: require('./controllers/sprints'),
+  .state('app.project.agile', {
+    url: '',
+    controller: require('./controllers/agile'),
     controllerAs: 'vm',
     template: require('./views/sprint.filters.jade'),
-    title: 'Agile management',
+    abstract: true,
     resolve: {
       sprints: function ($http, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.project + '/sprints');
-      },
-      stories: function($http, $stateParams) {
+      }
+    }
+  })
+  .state('app.project.agile.backlog', {
+    url: '/backlog',
+    controller: require('./controllers/stories'),
+    controllerAs: 'vm',
+    template: require('./views/sprint.jade'),
+    title: 'Project backlog',
+    resolve: {
+      stories: function ($http, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.project + '/backlog');
       }
     }
   })
-  .state('app.project.backlog.sprint', {
-    url: '/:sprint',
+  .state('app.project.agile.sprint', {
+    url: '/sprint/:sprint',
     controller: require('./controllers/stories'),
     controllerAs: 'vm',
     template: require('./views/sprint.jade'),
-    title: 'Agile management',
+    title: 'Sprint',
     resolve: {
       stories: function ($http, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.project + '/sprints/' + $stateParams.sprint);

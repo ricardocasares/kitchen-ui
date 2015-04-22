@@ -27,12 +27,12 @@ function OnRun($rootScope, AppSettings, $httpBackend) {
 
   $httpBackend.whenGET(/api\/projects\/(\d)\/(backlog)$/).respond(function(method, url, data){
     console.log(method, url, data);
-    return [200, sprints, {}];
+    return [200, stories, {}];
   });
 
   $httpBackend.whenGET(/api\/projects\/(\d)\/(sprints)$/).respond(function(method, url, data){
     console.log(method, url, data);
-    return [200, stories, {}];
+    return [200, sprints, {}];
   });
 
   $httpBackend.whenGET(/api\/projects\/(\d)\/(sprints)\/(\d)$/).respond(function(method, url, data){

@@ -9,8 +9,8 @@
 			ul.nav.nav-pills
 				li(ng-class="{ 'active': ('app.project.discussions' | includedByState)}")
 					a(ui-sref="app.project.discussions.recent") Discussions
-				li(ui-sref-active="active")
-					a(ui-sref="app.project.backlog({ project: vm.project.id })") Agile
+				li(ng-class="{ 'active': ('app.project.agile' | includedByState)}")
+					a(ui-sref="app.project.agile.backlog({ project: vm.project.id })") Agile
 				li(ui-sref-active="active")
 					a(ui-sref="app.project.people") People
 				li(ui-sref-active="active")
