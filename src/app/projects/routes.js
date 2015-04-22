@@ -10,6 +10,7 @@ function Routes($stateProvider) {
     template: require('./views/projects.jade'),
     title: 'Projects',
     resolve: {
+      // @ngInject
       projects: function ($http) {
         return $http.get('/api/projects');
       }
@@ -22,6 +23,7 @@ function Routes($stateProvider) {
     controllerAs: 'vm',
     template: require('./views/project.jade'),
     resolve: {
+      // @ngInject
       project: function ($http, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.project);
       }
@@ -30,7 +32,11 @@ function Routes($stateProvider) {
   .state('app.project.discussions', {
     url: '/discussions',
     abstract: true,
-    template: require('./views/discussion.filters.jade'),
+    views: {
+      'main': {
+        template: require('./views/discussion.filters.jade')
+      }
+    }
   })
   .state('app.project.discussions.recent', {
     url: '/recent',
@@ -39,6 +45,7 @@ function Routes($stateProvider) {
     template: require('./views/discussion.jade'),
     title: 'Recent discussions',
     resolve: {
+      // @ngInject
       discussions: function ($http, project, $stateParams) {
         return $http.get('/api/projects/' + project.data.id + '/discussions/recent');
       }
@@ -51,6 +58,7 @@ function Routes($stateProvider) {
     template: require('./views/discussion.jade'),
     title: 'All discussions',
     resolve: {
+      // @ngInject
       discussions: function ($http, project, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.id + '/discussions/all');
       }
@@ -63,6 +71,7 @@ function Routes($stateProvider) {
     template: require('./views/discussion.jade'),
     title: 'Archived discussions',
     resolve: {
+      // @ngInject
       discussions: function ($http, project, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.id + '/discussions/archived');
       }
@@ -70,11 +79,16 @@ function Routes($stateProvider) {
   })
   .state('app.project.agile', {
     url: '',
-    controller: require('./controllers/agile'),
-    controllerAs: 'vm',
-    template: require('./views/sprint.filters.jade'),
+    views: {
+      'main': {
+        controller: require('./controllers/agile'),
+        controllerAs: 'vm',
+        template: require('./views/sprint.filters.jade'),
+      }
+    },
     abstract: true,
     resolve: {
+      // @ngInject
       sprints: function ($http, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.project + '/sprints');
       }
@@ -87,6 +101,7 @@ function Routes($stateProvider) {
     template: require('./views/sprint.jade'),
     title: 'Project backlog',
     resolve: {
+      // @ngInject
       stories: function ($http, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.project + '/backlog');
       }
@@ -99,22 +114,22 @@ function Routes($stateProvider) {
     template: require('./views/sprint.jade'),
     title: 'Sprint',
     resolve: {
+      // @ngInject
       stories: function ($http, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.project + '/sprints/' + $stateParams.sprint);
       }
     }
   })
-  .state('app.project.backlog.sprint.board', {
+  .state('app.project.agile.sprint.board', {
     url: '/board',
-    controller: require('./controllers/sprints'),
-    controllerAs: 'vm',
-    template: require('./views/sprint.board.jade'),
-    title: 'Agile management',
-    resolve: {
-      sprints: function ($http, $stateParams) {
-        return $http.get('/api/projects/' + $stateParams.project + '/sprints/' + $stateParams.sprint);
+    views: {
+      'main@app.project': {
+        controller: require('./controllers/board'),
+        controllerAs: 'vm',
+        template: require('./views/sprint.board.jade')
       }
-    }
+    },
+    title: 'Agile board'
   })
   .state('app.project.people', {
     url: '/people',
@@ -123,6 +138,7 @@ function Routes($stateProvider) {
     template: require('./views/people.jade'),
     title: 'People on this project',
     resolve: {
+      // @ngInject
       people: function ($http, $stateParams) {
         return $http.get('/api/projects/' + $stateParams.project + '/people');
       }

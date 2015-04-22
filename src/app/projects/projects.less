@@ -7,9 +7,6 @@
 		color: #DDD;
 	}
 	.agenda {
-		.page-header {
-			margin-top: 15px;
-		}
 		.agenda-project {
 			border-bottom: 1px solid #EEE;
 		}
@@ -17,9 +14,6 @@
 }
 
 .project {
-	.page-header {
-		margin-top: 10px;
-	}
 	.sprint-meta, .discussion-meta {
 		.label {
 			margin-right: 5px;
@@ -36,7 +30,17 @@
 		border-right: 1px solid #EEE;
 	}
 
-	.row.agile-board{
+	.row.agile-board {
 	  overflow: hidden; 
+	}
+	.agile-board {
+		.page-header {
+			margin-top: 0;
+			margin-bottom: 2px;
+			line-height: 15px;
+		}
+		.swimlane {
+			min-height: 200px;
+		}
 	}
 }

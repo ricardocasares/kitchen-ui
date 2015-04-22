@@ -7,9 +7,11 @@
   	"settings": {
   		"agile": {
   			"active": true,
-  			"custom-statuses": [
-  				{ "name": "In progress", "slug": "in-progress" },
-  				{ "name": "Ready to test", "slug": "ready-to-test" }
+  			"statuses": [
+          { "name": "Ready to test", "key": "readyToTest", "order": 3 },
+          { "name": "Open", "key": "open", "order": 1 },
+          { "name": "In progress", "key": "inProgress", "order": 2 },
+  				{ "name": "Closed", "key": "closed", "order": 4 }
   			]
   		}
   	},
@@ -23,9 +25,11 @@
   	"settings": {
   		"agile": {
   			"active": true,
-  			"custom-statuses": [
-  				{ "name": "In progress", "slug": "in-progress" },
-  				{ "name": "Ready to test", "slug": "ready-to-test" }
+  			"statuses": [
+          { "name": "Ready to test", "key": "readyToTest", "order": 3 },
+          { "name": "Open", "key": "open", "order": 1 },
+          { "name": "In progress", "key": "inProgress", "order": 2 },
+  				{ "name": "Closed", "key": "closed", "order": 4 }
   			]
   		}
   	},
@@ -39,9 +43,11 @@
   	"settings": {
   		"agile": {
   			"active": true,
-  			"custom-statuses": [
-  				{ "name": "In progress", "slug": "in-progress" },
-  				{ "name": "Ready to test", "slug": "ready-to-test" }
+  			"statuses": [
+          { "name": "Ready to test", "key": "readyToTest", "order": 3 },
+          { "name": "Open", "key": "open", "order": 1 },
+          { "name": "In progress", "key": "inProgress", "order": 2 },
+  				{ "name": "Closed", "key": "closed", "order": 4 }
   			]
   		}
   	},
@@ -55,9 +61,11 @@
   	"settings": {
   		"agile": {
   			"active": true,
-  			"custom-statuses": [
-  				{ "name": "In progress", "slug": "in-progress" },
-  				{ "name": "Ready to test", "slug": "ready-to-test" }
+  			"statuses": [
+          { "name": "Ready to test", "key": "readyToTest", "order": 3 },
+          { "name": "Open", "key": "open", "order": 1 },
+          { "name": "In progress", "key": "inProgress", "order": 2 },
+  				{ "name": "Closed", "key": "closed", "order": 4 }
   			]
   		}
   	},
@@ -71,9 +79,11 @@
   	"settings": {
   		"agile": {
   			"active": true,
-  			"custom-statuses": [
-  				{ "name": "In progress", "slug": "in-progress" },
-  				{ "name": "Ready to test", "slug": "ready-to-test" }
+  			"statuses": [
+          { "name": "Ready to test", "key": "readyToTest", "order": 3 },
+          { "name": "Open", "key": "open", "order": 1 },
+          { "name": "In progress", "key": "inProgress", "order": 2 },
+  				{ "name": "Closed", "key": "closed", "order": 4 }
   			]
   		}
   	},

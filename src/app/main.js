@@ -7,6 +7,7 @@ require('angular-ui-router');
 require('angular-bootstrap');
 require('angular-loading-bar');
 require('angular-mocks');
+require('ngDraggable');
 require('./home');
 require('./people');
 require('./projects');
@@ -19,6 +20,7 @@ angular.element(document).ready(function() {
     'ui.router',
     'ui.bootstrap',
     'angular-loading-bar',
+    'ngDraggable',
     'app.home',
     'app.people',
     'app.projects',

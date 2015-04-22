@@ -1,8 +1,10 @@
 .col-lg-9.col-lg-pull-3
+	h4(ng-hide="vm.sprint") Project backlog
+	h4(ng-show="vm.sprint") Sprint {{vm.sprint.id}}
+	hr
+	ui-view
 	.panel.panel-default(ng-show="vm.sprint")
 		.panel-body
-			h4.page-header Sprint {{vm.sprint.id}} 
-			small.text-muted  20/10/2015 to 7/11/2015
 			img(src="http://www.igniteui.com/help/images/igsparkline_overview_11.png").img-responsive
 			.sprint-meta
 				span.label.label-primary {{vm.stories.length}} stories
@@ -11,49 +13,32 @@
 				span.label.label-danger - 5
 				span.label.label-warning 7 days left
 			hr
-			.btn-toolbar
-				.btn-group.btn-group-sm
-					button.btn.btn-default Start print
-					button.btn.btn-default Stop print
-				.btn-group.btn-group-sm
-					button.btn.btn-danger Delete
-			hr
-			.row.stories
-				.col-xs-12(ng-repeat="story in vm.stories")
-					.panel.panel-default
-						.panel-body
-							.row
-								.col-xs-6
-									span.label-label-default #
-									|{{::story.id}} 
-									a(href="#", ng-click="story[$index] = ! story[$index]") {{::story.name}}
-								.col-xs-6
-									.discussion-meta.text-right
-										span.label.label-primary {{::story.priority}}
-										span.label.label-warning {{::story.points}}
-										span.label.label-default 0
-							.row.story(ng-show="story[$index]")
-									.col-lg-12
-										hr
-										p{{::story.description}}
-	.panel.panel-default(ng-hide="vm.sprint")
-		.panel-body
-			h4.page-header Backlog
-			.row.stories
-				.col-xs-12(ng-repeat="story in vm.stories")
-					.panel.panel-default
-						.panel-body
-							.row
-								.col-xs-6
-									span.label-label-default #
-									|{{::story.id}} 
-									a(href="#", ng-click="story[$index] = ! story[$index]") {{::story.name}}
-								.col-xs-6
-									.discussion-meta.text-right
-										span.label.label-primary {{::story.priority}}
-										span.label.label-warning {{::story.points}}
-										span.label.label-default 0
-							.row.story(ng-show="story[$index]")
-									.col-lg-12
-										hr
-										p{{::story.description}}
+			.row
+				.col-xs-6
+					.btn-group.btn-group-sm
+						button.btn.btn-danger Delete
+				.col-xs-6
+					.btn-toolbar.pull-right
+						.btn-group.btn-group-sm
+							button.btn.btn-default Start
+							button.btn.btn-default End
+						.btn-group.btn-group-sm
+							a(ui-sref="app.project.agile.sprint.board").btn.btn-default Board
+	.row.stories
+		.col-xs-12(ng-repeat="story in vm.stories")
+			.panel.panel-default
+				.panel-body
+					.row
+						.col-xs-6
+							span.label-label-default #
+							|{{::story.id}} 
+							a(href="#", ng-click="story[$index] = ! story[$index]") {{::story.name}}
+						.col-xs-6
+							.discussion-meta.text-right
+								span.label.label-primary {{::story.priority}}
+								span.label.label-warning {{::story.points}}
+								span.label.label-default 0
+					.row.story(ng-show="story[$index]")
+							.col-lg-12
+								hr
+								p {{::story.description}}
