@@ -9,7 +9,7 @@ nav.navbar.navbar-default
       a.navbar-brand.kitchen(ui-sref="app.home") kitchen
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li(ui-sref-active="active")
+        li(ng-class="{ 'active': ('app.projects' | includedByState)}")
           a(ui-sref="app.projects") Projects
         li(ui-sref-active="active")
           a(ui-sref="app.people") People

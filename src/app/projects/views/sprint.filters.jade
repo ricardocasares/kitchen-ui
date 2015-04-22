@@ -1,0 +1,35 @@
+.row
+	.col-lg-3.col-lg-push-9
+		ul.nav.nav-pills.nav-stacked
+			li(ui-sref-active="active")
+				a(ui-sref="app.project.backlog") Backlog
+					span.pull-right.badge 24
+		hr
+		h5 Filter by sprint
+		ul.nav.nav-pills.nav-stacked
+			li(ui-sref-active="active", ng-repeat="sprint in vm.sprints")
+				a(ui-sref="app.project.baclog.sprint({sprint: sprint.id})") Sprint {{sprint.id}}
+		hr
+		button.btn.btn-block.btn-default Add sprint
+		button(ng-if="vm.sprint", ng-click="vm.board = !vm.board").hidden-xs.btn.btn-block.btn-default Agile board
+		hr
+		h5 Filter stories by status
+		ul.nav.nav-pills.nav-stacked
+			li
+				a(ng-click="vm.filter = 'all'")
+					| All  
+					span.badge.pull-right 10
+			li.active
+				a(ng-click="vm.filter = 'open'")
+					| Open  
+					span.badge.pull-right 5
+			li
+				a(ng-click="vm.filter = 'in-progress'")
+					| In progress  
+					span.badge.pull-right 0
+			li
+				a(ng-click="vm.filter = 'closed'")
+					| Closed  
+					span.badge.pull-right 5
+		hr
+	ui-view

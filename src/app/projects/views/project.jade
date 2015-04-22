@@ -1,17 +1,16 @@
 .container-fluid.project
 	.row
 		.col-lg-12
-			span.label.label-success {{vm.project.tag}}
 			h2.page-header {{vm.project.name}}
 
 			p {{vm.project.description}}
 			hr
 		.col-lg-12
 			ul.nav.nav-pills
+				li(ng-class="{ 'active': ('app.project.discussions' | includedByState)}")
+					a(ui-sref="app.project.discussions.recent") Discussions
 				li(ui-sref-active="active")
-					a(ui-sref="app.project.discussions") Discussions
-				li(ui-sref-active="active")
-					a(ui-sref="app.project.agile") Agile
+					a(ui-sref="app.project.backlog({ project: vm.project.id })") Agile
 				li(ui-sref-active="active")
 					a(ui-sref="app.project.people") People
 				li(ui-sref-active="active")

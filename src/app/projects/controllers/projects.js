@@ -3,6 +3,6 @@
 function ProjectsCtrl(projects) {
   var vm = this;
   vm.projects = projects.data;
-  vm.favourites = vm.projects.slice(3,7);
+  vm.favourites = vm.projects.slice(1,5);
 }
 module.exports = ProjectsCtrl;

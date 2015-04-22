@@ -18,7 +18,7 @@
 				.caption
 					span.label.label-default 5 discussions
 					h4
-						a(ui-sref="app.project.discussions({ id: project.id })") {{::project.name}}
+						a(ui-sref="app.project.discussions.recent({ project: project.id })") {{::project.name}}
 					p
 						img.img-responsive(src="http://www.igniteui.com/help/images/igsparkline_overview_11.png")
 	.row
@@ -41,7 +41,7 @@
 					.row(ng-repeat="project in projects")
 						.col-xs-9 
 							p
-								a(ui-sref="app.project.discussions({ id: project.id })") {{::project.name}}
+								a(ui-sref="app.project.discussions.recent({ project: project.id })") {{::project.name}}
 						.col-xs-3
 							p.text-right
 								span.label.label-default 5 discussions
