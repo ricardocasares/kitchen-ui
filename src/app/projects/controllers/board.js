@@ -1,6 +1,6 @@
 'use strict';
 // @ngInject
-function BoardCtrl(project, stories, $q, $timeout) {
+function BoardCtrl(project, stories) {
   var vm = this;
   var keyOrderMap = {};
   var statuses = project.data.settings.agile.statuses;
