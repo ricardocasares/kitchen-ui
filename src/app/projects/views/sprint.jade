@@ -1,9 +1,9 @@
 .col-lg-9.col-lg-pull-3
   ui-view
+  h4(ng-hide="vm.sprint") Project backlog
+  h4(ng-show="vm.sprint") Sprint {{vm.sprint.id}}
   .panel.panel-default
     .panel-body
-      h4(ng-hide="vm.sprint") Project backlog
-      h4(ng-show="vm.sprint") Sprint {{vm.sprint.id}}
       .sprint-meta
         span.label.label-primary {{vm.stories.length}} stories
         span.label.label-default 25 pts
@@ -25,22 +25,9 @@
   
   ul(dnd-list="vm.stories").list-unstyled.stories
     li(
-      ng-repeat="story in vm.stories",
+      ng-repeat="story in vm.sprint.stories",
       dnd-draggable="story",
       dnd-moved="vm.stories.splice($index, 1)",
       dnd-selected="vm.selected = story"
-    ).panel.panel-default
-      .panel-body
-        .row
-          .col-xs-7
-            a(ng-click="story[$index] = ! story[$index]")  {{::story.name}}
-          .col-xs-5
-            .discussion-meta.text-right
-              span.label.label-default="#{{::story.id}}"
-              span.label.label-primary {{::story.priority}}
-              span.label.label-warning {{::story.points}}
-              span.label.label-default 0
-        .row.story(ng-show="story[$index]")
-            .col-lg-12
-              hr
-              p {{::story.description}}
+    )
+      story-card

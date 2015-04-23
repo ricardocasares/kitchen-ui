@@ -1,18 +1,18 @@
-.container-fluid.project
-	.row
-		.col-lg-12
-			h2 {{vm.project.name}}
-			p.text-muted  {{vm.project.description}}
-			hr
-			ul.nav.nav-pills
-				li(ng-class="{ 'active': ('app.project.discussions' | includedByState)}")
-					a(ui-sref="app.project.discussions.recent") Discussions
-				li(ng-class="{ 'active': ('app.project.agile' | includedByState)}")
-					a(ui-sref="app.project.agile.backlog({ project: vm.project.id })") Agile
-				li(ui-sref-active="active")
-					a(ui-sref="app.project.people") People
-				li(ui-sref-active="active")
-					a(ui-sref="app.project.settings") Settings
-		.col-lg-12
-			hr
-			div(ui-view="main")
+.container.project
+    .row
+        .col-lg-12
+            h2 {{vm.project.name}}
+            p.text-muted  {{vm.project.description}}
+            hr
+            ul.nav.nav-pills
+                li(ng-class="{ 'active': ('app.project.discussions' | includedByState)}")
+                    a(ui-sref="app.project.discussions.recent") Discussions
+                li(ng-class="{ 'active': ('app.project.agile' | includedByState)}")
+                    a(ui-sref="app.project.agile.backlog({ project: vm.project.id })") Agile
+                li(ui-sref-active="active")
+                    a(ui-sref="app.project.people") People
+                li(ui-sref-active="active")
+                    a(ui-sref="app.project.settings") Settings
+        .col-lg-12
+            hr
+            div(ui-view="main")

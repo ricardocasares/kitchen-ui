@@ -1,49 +1,51 @@
+@import url('./directives/story-card/story-card.less');
+
 .projects {
-	& .tabs > .tab-pane {
-		background: @white;
-		padding: 10px;
-	}
-	.star {
-		color: #DDD;
-	}
-	.agenda {
-		.agenda-project {
-			border-bottom: 1px solid #EEE;
-		}
-	}
+    & .tabs > .tab-pane {
+        background: @white;
+        padding: 10px;
+    }
+    .star {
+        color: #DDD;
+    }
+    .agenda {
+        .agenda-project {
+            border-bottom: 1px solid #EEE;
+        }
+    }
 }
 
 .project {
-	h2 {
-		margin-top: 0;
-	}
-	.sprint-meta, .discussion-meta {
-		.label {
-			margin-right: 5px;
-		}
-	}
-	.row.agile-board [class*="col-lg-3"]{
-		padding: 0 15px;
-		margin: 0;
-	  margin-bottom: -99999px;
-	  padding-bottom: 99999px;
-	}
+    h2 {
+        margin-top: 0;
+    }
+    .sprint-meta, .discussion-meta {
+        .label {
+            margin-right: 5px;
+        }
+    }
+    .row.agile-board [class*="col-lg-3"]{
+        padding: 0 15px;
+        margin: 0;
+      margin-bottom: -99999px;
+      padding-bottom: 99999px;
+    }
 
-	.row.agile-board [class*="col-lg-3"]:not(:last-child) {
-		border-right: 1px solid #EEE;
-	}
+    .row.agile-board [class*="col-lg-3"]:not(:last-child) {
+        border-right: 1px solid #EEE;
+    }
 
-	.row.agile-board {
-	  overflow: hidden; 
-	}
-	.agile-board {
-		.page-header {
-			margin-top: 0;
-			margin-bottom: 2px;
-			line-height: 15px;
-		}
-		.swimlane {
-			min-height: 500px;
-		}
-	}
+    .row.agile-board {
+      overflow: hidden; 
+    }
+    .agile-board {
+        .page-header {
+            margin-top: 0;
+            margin-bottom: 2px;
+            line-height: 15px;
+        }
+        .swimlane {
+            min-height: 500px;
+        }
+    }
 }

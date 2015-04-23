@@ -23,6 +23,7 @@ function buildScript(file) {
 
   var bundler = browserify({
     entries: config.browserify.entries,
+    insertGlobals: true,
     debug: true,
     cache: {},
     packageCache: {},

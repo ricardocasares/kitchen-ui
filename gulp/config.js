@@ -5,7 +5,8 @@ module.exports = {
   'serverport': 3000,
 
   'styles': {
-    'src' : 'src/app/main.less',
+    'src' : 'src/app/**/*.less',
+    'entry': 'src/app/main.less',
     'dest': 'build/css/'
   },
 

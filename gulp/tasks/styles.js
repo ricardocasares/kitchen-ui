@@ -10,7 +10,7 @@ var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('styles', function () {
 
-  return gulp.src(config.styles.src)
+  return gulp.src(config.styles.entry)
     .pipe(less())
     .on('error', handleErrors)
     .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 8'))

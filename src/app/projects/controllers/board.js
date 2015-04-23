@@ -1,10 +1,12 @@
 'use strict';
 // @ngInject
-function BoardCtrl(project, stories) {
+function BoardCtrl(project, stories, $q, $timeout) {
   var vm = this;
   var keyOrderMap = {};
   var statuses = project.data.settings.agile.statuses;
   vm.swimlanes = {};
+  vm.onDrop = onDrop;
+  vm.onMoved = onMoved;
   
   activate();
   
@@ -24,5 +26,16 @@ function BoardCtrl(project, stories) {
       }
     });
   }
+
+  function onMoved (event, index, story) {
+    console.log(event, index, story);
+  }
+
+  function onDrop (event, index, item, lane) {
+    console.log(event, index, item, lane);
+    item.status = lane;
+    return item;
+  }
 }
+
 module.exports = BoardCtrl;

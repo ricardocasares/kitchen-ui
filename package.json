@@ -36,10 +36,12 @@
     "browserify": "^5.10.0",
     "browserify-istanbul": "^0.2.0",
     "browserify-ngannotate": "^0.1.0",
+    "browserify-plain-jade": "^0.2.2",
     "bulk-require": "^0.2.1",
     "bulkify": "^1.1.1",
     "debowerify": "^1.2.0",
     "del": "^0.1.3",
+    "exorcist": "^0.3.0",
     "express": "^4.7.2",
     "gulp": "^3.8.8",
     "gulp-angular-templatecache": "^1.3.0",
@@ -50,6 +52,7 @@
     "gulp-imagemin": "^1.1.0",
     "gulp-jshint": "^1.8.3",
     "gulp-karma": "0.0.4",
+    "gulp-less": "^3.0.3",
     "gulp-notify": "^2.0.0",
     "gulp-protractor": "0.0.11",
     "gulp-rename": "^1.2.0",
@@ -76,9 +79,7 @@
     "uglifyify": "^2.5.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^0.1.1",
-    "watchify": "^2.0.0",
-    "browserify-plain-jade": "^0.2.2",
-    "gulp-less": "^3.0.3"
+    "watchify": "^2.0.0"
   },
   "scripts": {
     "pretest": "npm install",
@@ -86,6 +87,5 @@
     "preprotractor": "npm run update-webdriver",
     "protractor": "npm run protractor test/protractor.conf.js"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
