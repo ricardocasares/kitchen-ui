@@ -133,10 +133,14 @@ function Routes($stateProvider) {
   })
   .state('app.project.people', {
     url: '/people',
-    controller: require('./controllers/people'),
-    controllerAs: 'vm',
-    template: require('./views/people.jade'),
     title: 'People on this project',
+    views: {
+      'main': {
+        controller: require('./controllers/people'),
+        controllerAs: 'vm',
+        template: require('./views/people.jade'),
+      }
+    },
     resolve: {
       // @ngInject
       people: function ($http, $stateParams) {

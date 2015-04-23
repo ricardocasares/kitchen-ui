@@ -9,13 +9,16 @@
 @import (inline) "../../bower_components/angular-loading-bar/build/loading-bar.css";
 @import url("//fonts.googleapis.com/css?family=Roboto:300,400,500");
 @import url("//fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("//rawgit.com/daneden/animate.css/master/animate.css");
 @import './partials/nav';
 @import './home/home';
 @import './projects/projects';
 @import './everything/everything';
-
+.dropzone {
+  min-height: 400px;
+}
 h1, h2, h3, h4, h5, h6 {
-	color: #333;
+	color: #666;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -74,4 +77,20 @@ p {
   .panel-body {
     padding: 10px;
   }
+}
+ul[dnd-list] {
+  min-height: 300px;
+}
+ul[dnd-list] .dndPlaceholder {
+  display: block;
+  border: 1px dashed #CCC;
+  border-radius: 4px;
+  min-height: 42px;
+}
+ul[dnd-list] {
+  margin: 15px 0;
+}
+
+hr {
+  margin: 10px 0;
 }

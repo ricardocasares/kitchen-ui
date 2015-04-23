@@ -25,32 +25,32 @@ function OnRun($rootScope, AppSettings, $httpBackend) {
     return [200, projects, {}];
   });
 
-  $httpBackend.whenGET(/api\/projects\/(\d)\/(backlog)$/).respond(function(method, url, data){
+  $httpBackend.whenGET(/api\/projects\/([0-9]+)\/(backlog)$/).respond(function(method, url, data){
     console.log(method, url, data);
     return [200, stories, {}];
   });
 
-  $httpBackend.whenGET(/api\/projects\/(\d)\/(sprints)$/).respond(function(method, url, data){
+  $httpBackend.whenGET(/api\/projects\/([0-9]+)\/(sprints)$/).respond(function(method, url, data){
     console.log(method, url, data);
     return [200, sprints, {}];
   });
 
-  $httpBackend.whenGET(/api\/projects\/(\d)\/(sprints)\/(\d)$/).respond(function(method, url, data){
+  $httpBackend.whenGET(/api\/projects\/([0-9]+)\/(sprints)\/(\d)$/).respond(function(method, url, data){
     console.log(method, url, data);
     return [200, stories, {}];
   });
 
-  $httpBackend.whenGET(/api\/projects\/(\d)\/(discussions)/).respond(function(method, url, data){
+  $httpBackend.whenGET(/api\/projects\/([0-9]+)\/(discussions)/).respond(function(method, url, data){
     console.log(method, url, data);
     return [200, discussions, {}];
   });
 
-  $httpBackend.whenGET(/api\/projects\/(\d)\/(people)$/).respond(function(method, url, data){
+  $httpBackend.whenGET(/api\/projects\/([0-9]+)\/(people)$/).respond(function(method, url, data){
     console.log(method, url, data);
     return [200, people, {}];
   });
 
-  $httpBackend.whenGET(/api\/projects\/([0-9])$/).respond(function(method, url, data){
+  $httpBackend.whenGET(/api\/projects\/([0-9]+)$/).respond(function(method, url, data){
     console.log(method, url, data);
     return [200, projects[url.split('/')[3]-1], {}];
   });

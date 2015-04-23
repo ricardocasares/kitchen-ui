@@ -7,7 +7,7 @@ require('angular-ui-router');
 require('angular-bootstrap');
 require('angular-loading-bar');
 require('angular-mocks');
-require('ngDraggable');
+require('angular-drag-and-drop-lists');
 require('./home');
 require('./people');
 require('./projects');
@@ -20,7 +20,7 @@ angular.element(document).ready(function() {
     'ui.router',
     'ui.bootstrap',
     'angular-loading-bar',
-    'ngDraggable',
+    'dndLists',
     'app.home',
     'app.people',
     'app.projects',

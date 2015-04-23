@@ -1,25 +1,24 @@
-.row
-	.col-lg-12
-		
 .row.agile-board.stories
-	.col-lg-3(ng-repeat="(k,s) in vm.swimlanes")
-		h5.page-header.text-center {{s.name}}
-		.row.swimlane(ng-drop="true", ng-drop-success="vm.dropSuccess($data, s)")
-			.col-lg-12(ng-drag="true", ng-drag-data="story", ng-repeat="story in s.stories")
-				.panel.panel-default
-					.panel-body
-						.row
-							.col-xs-6
-								span.label-label-default #
-								|{{::story.id}} 
-								a(href="#", ng-click="story[$index] = ! story[$index]") {{::story.name}}
-							.col-xs-6
-								.discussion-meta.text-right
-									span.label.label-primary {{::story.priority}}
-									span.label.label-warning {{::story.points}}
-									span.label.label-default 0
-						.row.story(ng-show="story[$index]")
-								.col-lg-12
-									hr
-									p {{::story.description}}
-hr
+  .col-lg-3(ng-repeat="(k,s) in vm.swimlanes")
+    h5.page-header.text-center {{s.name}}
+    ul(dnd-list="s.stories").list-unstyled
+      li(
+        ng-repeat="story in s.stories",
+        dnd-draggable="story",
+        dnd-moved="s.stories.splice($index, 1)",
+        dnd-selected="vm.selected = story"
+      ).panel.panel-default
+        .panel-body
+          .row
+            .col-xs-7
+              a(ng-click="story[$index] = ! story[$index]")  {{::story.name}}
+            .col-xs-5
+              .discussion-meta.text-right
+                span.label.label-default="#{{::story.id}}"
+                span.label.label-primary {{::story.priority}}
+                span.label.label-warning {{::story.points}}
+                span.label.label-default 0
+          .row.story(ng-show="story[$index]")
+              .col-lg-12
+                hr
+                p {{::story.description}}
