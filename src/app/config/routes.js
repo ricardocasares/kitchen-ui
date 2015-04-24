@@ -6,7 +6,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider) {
   	.state('app', {
   		url: '',
   		abstract: true,
-  		template: require('../layout.jade'),
+  		template: '<ui-view></ui-view>'//require('../layout.jade'),
   	});
 
   $urlRouterProvider.otherwise('/');

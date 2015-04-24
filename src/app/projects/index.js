@@ -1,6 +1,4 @@
 'use strict';
-
-require('angular');
 require('angular-filter');
 var bulk = require('bulk-require');
 

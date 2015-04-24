@@ -2,6 +2,9 @@
 
 var istanbul = require('browserify-istanbul');
 var isparta  = require('isparta');
+var jade  = require('browserify-plain-jade');
+var debowerify   = require('debowerify');
+var ngAnnotate   = require('browserify-ngannotate');
 
 module.exports = function(config) {
 
@@ -10,9 +13,9 @@ module.exports = function(config) {
     basePath: '../',
     frameworks: ['jasmine', 'browserify'],
     preprocessors: {
-      'app/js/**/*.js': ['browserify', 'babel', 'coverage']
+      'src/app/**/*.js': ['browserify', 'babel', 'coverage']
     },
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
     reporters: ['progress', 'coverage'],
 
     autoWatch: true,
@@ -20,10 +23,13 @@ module.exports = function(config) {
     browserify: {
       debug: true,
       transform: [
+        jade,
+        debowerify,
+        ngAnnotate,
         'bulkify',
         istanbul({
           instrumenter: isparta,
-          ignore: ['**/node_modules/**', '**/test/**']
+          ignore: ['**/bower_components/**','**/node_modules/**', '**/test/**']
         })
       ]
     },
@@ -32,18 +38,16 @@ module.exports = function(config) {
       '/': 'http://localhost:9876/'
     },
 
-    urlRoot: '/__karma__/',
+    urlRoot: '/',
 
     files: [
       // 3rd-party resources
-      'node_modules/angular/angular.min.js',
-      'node_modules/angular-mocks/angular-mocks.js',
 
       // app-specific code
-      'app/js/main.js',
+      'src/app/main.js',
 
       // test files
-      'test/unit/**/*.js'
+      'src/app/**/*.spec.js'
     ]
 
   });
