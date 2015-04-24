@@ -5,8 +5,8 @@
         .meta.pull-right
           span.label.label-default(alt="Story id", title="Story id")="#{{::story.id}}"
           span.label.label-primary(alt="Priority", title="Priority") {{::story.priority}}
-          span.label.label-success(alt="points", title="points") {{::story.points}}
-          img.img-circle(draggable="false", title="Ricardo Casares", src="http://i.picresize.com/images/2015/04/21/i2JHa.png")
+          span.label.label-success(alt="Points", title="Points") {{::story.points}}
+          img.img-circle(draggable="false", title="Ricardo Casares", src="/images/user.png")
         a(ng-click="story.open = ! story.open") {{::story.name}}
         
     .row.story(ng-show="story.open")

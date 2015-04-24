@@ -42,6 +42,10 @@ p {
     border-right: 0;
 }
 
+.navbar-default .navbar-collapse {
+    border: none;
+}
+
 .footer {
   width: 100%;
   text-align: center;
@@ -90,4 +94,18 @@ hr {
 
 .nav .dndDragover {
   background: #DDD;
+}
+
+div.navbar-collapse.collapse {
+    display: block;
+    overflow: hidden;
+    max-height: 0px;
+    -webkit-transition: max-height .3s ease;
+    -moz-transition: max-height .3s ease;
+    -o-transition: max-height .3s ease;
+    transition: max-height .3s ease;
+}
+div.navbar-collapse.collapse.in {
+    overflow: hidden;
+    max-height: 10000px;
 }
