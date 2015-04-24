@@ -34,10 +34,6 @@ module.exports = function(config) {
       ]
     },
 
-    proxies: {
-      '/': 'http://localhost:9876/'
-    },
-
     urlRoot: '/',
 
     files: [
