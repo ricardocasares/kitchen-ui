@@ -20,11 +20,11 @@ describe('Unit: PeopleCtrl', function() {
     expect(ctrl.number).toEqual(1234);
   });
 
-  it('should have a number variable equal to 1234', function() {
+  it('should have a data variable defined', function() {
     expect(ctrl.data).toBeDefined();
   });
 
-  it('should have a title variable equal to \'AngularJS, Gulp, and Browserify!\'', function() {
+  it('should have a title variable equal to \'People!\'', function() {
     expect(ctrl.title).toEqual('People!');
   });
 
