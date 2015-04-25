@@ -6,9 +6,7 @@ nav.navbar.navbar-default(role="navigation")
             ng-click="navCollapse = !navCollapse"
         ).navbar-toggle
             span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
+            i.fa.fa-bars
         a.navbar-brand.kitchen(ui-sref="app.home") kitchen
     div(ng-class="!navCollapse && 'in'").navbar-collapse.collapse.navbar-responsive-collapse
         ul.nav.navbar-nav

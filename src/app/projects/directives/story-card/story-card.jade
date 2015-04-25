@@ -7,9 +7,11 @@
           span.label.label-primary(alt="Priority", title="Priority") {{::story.priority}}
           span.label.label-success(alt="Points", title="Points") {{::story.points}}
           img.img-circle(draggable="false", title="Ricardo Casares", src="/images/user.png")
+        i.fa.fa-bars
         a(ng-click="story.open = ! story.open") {{::story.name}}
         
     .row.story(ng-show="story.open")
         .col-lg-12
           hr
-          p {{::story.description}}
+          p
+            {{::story.description}}
