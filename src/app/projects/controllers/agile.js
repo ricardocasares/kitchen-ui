@@ -6,7 +6,7 @@ function Agile(project, sprints) {
   vm.sprints = sprints.data;
   vm.onDrop = onDrop;
 
-  function onDrop (event, story, sprint) {
+  function onDrop (story, sprint) {
     if(story.sprint !== sprint.id) {
       story.sprint = sprint.id;
       sprint.stories.push(story);

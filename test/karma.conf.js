@@ -15,7 +15,7 @@ module.exports = function(config) {
     preprocessors: {
       'src/app/**/*.js': ['browserify', 'babel', 'coverage']
     },
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
     reporters: ['progress', 'coverage'],
 
     autoWatch: true,
@@ -43,7 +43,7 @@ module.exports = function(config) {
       'src/app/main.js',
 
       // test files
-      'src/app/**/*.spec.js'
+      'src/app/**/**/*.spec.js'
     ]
 
   });
