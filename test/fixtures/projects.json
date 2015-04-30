@@ -48,14 +48,24 @@
             "name": "In progress"
           },
           {
-            "key": "ready",
+            "key": "readyForTesting",
             "order": 3,
-            "name": "Ready"
+            "name": "Ready for testing"
+          },
+          {
+            "key": "ready",
+            "order": 5,
+            "name": "Ready for review"
           },
           {
             "key": "closed",
             "order": 4,
             "name": "Closed"
+          },
+          {
+            "key": "reopen",
+            "order": 6,
+            "name": "Reopened"
           }
         ],
         "active": true

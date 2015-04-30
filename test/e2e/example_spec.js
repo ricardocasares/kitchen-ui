@@ -2,11 +2,15 @@
 
 'use strict';
 
-describe('E2E: Example', function() {
+describe('E2E: Home page', function() {
 
   beforeEach(function() {
     browser.get('/');
     browser.waitForAngular();
+  });
+
+  it('should have a title', function() {
+    expect(browser.getTitle()).toEqual('Kitchen');
   });
 
   it('should route correctly', function() {

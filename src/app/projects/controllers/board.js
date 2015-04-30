@@ -21,7 +21,7 @@ function BoardCtrl(project, stories) {
     });
 
     stories.data.forEach(function(story) {
-      if(vm.swimlanes[keyOrderMap[story.status]].lane === story.status) {
+      if(vm.swimlanes[keyOrderMap[story.status]] && vm.swimlanes[keyOrderMap[story.status]].lane === story.status) {
         vm.swimlanes[keyOrderMap[story.status]].stories.push(story);
       }
     });

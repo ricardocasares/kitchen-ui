@@ -1,16 +1,15 @@
 .story-card.panel.panel-default(ng-class="story.status")
   .panel-body
     .row
-      .col-lg-12
-        .meta.pull-right
-          span.label.label-default(alt="Story id", title="Story id")="#{{::story.id}}"
-          span.label.label-primary(alt="Priority", title="Priority") {{::story.priority}}
-          span.label.label-success(alt="Points", title="Points") {{::story.points}}
-          img.img-circle(draggable="false", title="Ricardo Casares", src="/images/user.png")
-        i.fa.fa-bars
-        a(ng-click="story.open = ! story.open") {{::story.name}}
-        
-    .row.story(ng-show="story.open")
         .col-lg-12
-          hr
-          p {{::story.description}}"
+            .meta
+                span.label.label-default(alt="Story id", title="Story id")="#{{::story.id}}"
+                span.label.label-primary(alt="Priority", title="Priority") {{::story.priority}}
+                span.label.label-success(alt="Points", title="Points") {{::story.points}}
+                img.img-circle(draggable="false", title="Ricardo Casares", src="/images/user.png")
+            hr
+        .col-lg-12
+            a(ng-click="story.open = ! story.open") {{::story.name}}
+        .col-lg-12(ng-show="story.open")
+            hr
+            p {{::story.description}}"

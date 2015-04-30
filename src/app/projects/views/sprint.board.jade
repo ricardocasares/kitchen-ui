@@ -1,14 +1,29 @@
 .row.agile-board.stories
-  .col-lg-3(ng-repeat="(k,s) in vm.swimlanes")
-    h5.page-header.text-center {{s.name}}
-    ul(
-      dnd-list="s.stories",
-      dnd-drop="vm.onDrop(event, index, item, s.lane)"
-    ).list-unstyled
-      li(
-        ng-repeat="story in s.stories",
-        dnd-draggable="story",
-        dnd-moved="vm.onMoved(event, $index, story)",
-        dnd-selected="vm.selected = story",
-      )
-        story-card
+  .col-lg-12
+    .flex
+      .flex-lane(ng-repeat="(k, s) in vm.swimlanes")
+        h5.page-header.text-center {{s.name}}
+        ul(
+          dnd-list="s.stories",
+          dnd-drop="vm.onDrop(event, index, item, s.lane)"
+        ).list-unstyled
+          li(
+            ng-repeat="story in s.stories",
+            dnd-draggable="story",
+            dnd-moved="vm.onMoved(event, $index, story)",
+            dnd-selected="vm.selected = story",
+          )
+            story-card
+  //- .col-lg-3(ng-repeat="(k,s) in vm.swimlanes")
+  //-   h5.page-header.text-center {{s.name}}
+  //-   ul(
+  //-     dnd-list="s.stories",
+  //-     dnd-drop="vm.onDrop(event, index, item, s.lane)"
+  //-   ).list-unstyled
+  //-     li(
+  //-       ng-repeat="story in s.stories",
+  //-       dnd-draggable="story",
+  //-       dnd-moved="vm.onMoved(event, $index, story)",
+  //-       dnd-selected="vm.selected = story",
+  //-     )
+  //-       story-card
