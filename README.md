@@ -1,6 +1,8 @@
 angularjs-gulp-browserify-boilerplate
 =====================================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ricardocasares/kitchen-ui.svg)](https://greenkeeper.io/)
+
 A boilerplate using AngularJS, SASS, Gulp, and Browserify that also utilizes [these best AngularJS practices](https://github.com/toddmotto/angularjs-styleguide)  and Gulp best practices from [this resource](https://github.com/greypants/gulp-starter).
 
 ---
